@@ -1,0 +1,55 @@
+<div class="container mt-3">
+  <h2 class="text-center">Student Registration</h2>
+  <div class="card w-50">
+    <h5>Student Form</h5>
+
+    <form class="form mt-2">
+      <div class="form-group">
+        <label>Student Name</label>
+        <input type="text" [(ngModel)]="Stname" [ngModelOptions]="{standalone: true}" class="form-control" id="Stname">
+      </div>
+
+      <div class="form-group">
+        <label>Course</label>
+        <input type="text" [(ngModel)]="Course" [ngModelOptions]="{standalone: true}" class="form-control" id="Course">
+      </div>
+
+      <div class="form-group">
+        <label>Fee</label>
+        <input type="text" [(ngModel)]="Fee" [ngModelOptions]="{standalone: true}" class="form-control" id="Fee">
+      </div>
+
+      <button type="submit" class="btn btn-primary mt-2" (click)="save()">Save</button>
+    </form>
+  </div>
+
+  <div class="container mt-2">
+    <table class="table mt-3 mx-auto">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Student Name</th>
+          <th>Course</th>
+          <th>Fee</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of StudentArray | paginate : pagingConfig; let i = index">
+          <td>{{ student.Id }}</td>
+          <td>{{ student.Stname }}</td>
+          <td>{{ student.Course }}</td>
+          <td>{{ student.Fee }}</td>
+          <td>
+            <button type="button" class="btn btn-success" (click)="setUpdate(student)">Edit</button>
+            <button type="button" class="btn btn-danger" (click)="setDelete(student)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-center">
+      <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)"></pagination-controls>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,55 @@
+.card{
+    border: none;
+    padding: 10px;
+}
+
+.form-group{
+    padding: 5px;
+    display: flex;
+}
+
+label,input{
+    font-size: 14px;
+}
+
+label{
+    width: 200px;
+}
+
+table{
+    border: 1px solid black;
+    width: 1000px;    
+    background-color: black;
+}
+
+th{
+    text-align: center;
+    font-size: 16px;
+}
+
+td{
+    font-size: 14px;
+}
+
+tr, th, td{
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.btn-primary{
+    font-size: 14px;
+}
+
+.btn-success, .btn-danger{
+    font-size: 14px;
+    margin: 2px;
+}
+ button:hover{
+    background-color: black;
+    color: white;
+ }
+
+ .sort-icon {
+    font-size: 18px;
+    margin: 8px;
+  }
